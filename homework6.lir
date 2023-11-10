@@ -1,0 +1,65 @@
+foo:&(int) -> int
+
+extern print:() -> int
+extern read:() -> int
+
+fn foo(x:int) -> int {
+let _ret3:int, _t1:int, _t2:int
+entry:
+  _t1 = $call_ext print(x)
+  _t2 = $arith mul x 2
+  _ret3 = $copy _t2
+  $jump exit
+
+exit:
+  $ret _ret3
+}
+
+fn main() -> int {
+let _1:int, _ret11:int, _t10:int, _t2:&int, _t3:int, _t4:int, _t5:int, _t6:int, _t7:int, _t8:int, _t9:int, a:int, b:int, c:&int, d:&int, e:int
+bb1:
+  _t6 = $cmp lt e a
+  $branch _t6 bb2 bb3
+
+bb2:
+  b = $copy 2
+  _t7 = $arith add e b
+  e = $copy _t7
+  _t8 = $call_ext read()
+  $branch _t8 bb6 bb8
+
+bb3:
+  _ret11 = $copy e
+  $jump exit
+
+bb5:
+  a = $copy b
+  $jump bb1
+
+bb6:
+  _t9 = $call_dir foo(a) then bb7
+
+bb7:
+  b = $copy _t9
+  $jump bb5
+
+bb8:
+  _t10 = $arith sub 0 1
+  e = $copy _t10
+  $jump bb3
+
+entry:
+  _t2 = $alloc 1 [_1]
+  c = $copy _t2
+  d = $copy c
+  _t3 = $arith add 1 2
+  _t4 = $arith add _t3 3
+  a = $copy _t4
+  $store c a
+  _t5 = $load d
+  b = $copy _t5
+  $jump bb1
+
+exit:
+  $ret _ret11
+}
