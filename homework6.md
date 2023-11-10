@@ -6,21 +6,21 @@ _1, _ret11, _t10, _t2, _t3, _t4, _t5, _t6, _t7, _t8, _t9, a, b, c, d, e: 0
 
 
 **bb1 pre-state:**
-_t2: memory address, so T (unknown)
-c: memory address, so T (unknown)
-d: memory address, so T (unknown)
-_t3: 3
-_t4: 6
-a: T (unknown)
-_t5: T (unknown)
-b: T (unknown)
-_t6: T (unknown)
-_t7: T (unknown)
-e: T (unknown)
-_t8: T (unknown)
-_t9: T (unknown)
-_t10: 0
-_ret11: 0
+* _t2: memory address, so T (unknown)
+* c: memory address, so T (unknown)
+* d: memory address, so T (unknown)
+* _t3: 3
+* _t4: 6
+* a: T (unknown)
+* _t5: T (unknown)
+* b: T (unknown)
+* _t6: T (unknown)
+* _t7: T (unknown)
+* e: T (unknown)
+* _t8: T (unknown)
+* _t9: T (unknown)
+* _t10: 0
+* _ret11: 0
 
 
 **bb2 pre-state:**
